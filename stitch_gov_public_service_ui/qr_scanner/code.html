@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QueueMa - Scanner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#6e8cff",
+                    "on-error-container": "#510017",
+                    "on-background": "#272e42",
+                    "on-secondary-fixed": "#1e3457",
+                    "surface-container-high": "#d9e2ff",
+                    "surface": "#f6f6ff",
+                    "tertiary-dim": "#822c78",
+                    "tertiary-fixed-dim": "#ec89da",
+                    "outline-variant": "#a5adc6",
+                    "secondary-container": "#bcd2fe",
+                    "surface-container-low": "#eef0ff",
+                    "primary-dim": "#0040cb",
+                    "tertiary-fixed": "#fc96e9",
+                    "on-primary": "#f2f1ff",
+                    "secondary": "#465c81",
+                    "error": "#b41340",
+                    "on-surface": "#272e42",
+                    "tertiary": "#903985",
+                    "background": "#f6f6ff",
+                    "on-primary-fixed-variant": "#002278",
+                    "on-tertiary-fixed": "#41003d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#eff2ff",
+                    "inverse-primary": "#6a89ff",
+                    "tertiary-container": "#fc96e9",
+                    "outline": "#6f768e",
+                    "error-container": "#f74b6d",
+                    "surface-container-highest": "#d1dcff",
+                    "on-primary-container": "#001a63",
+                    "surface-dim": "#c7d4fa",
+                    "surface-variant": "#d1dcff",
+                    "primary-fixed": "#829bff",
+                    "secondary-fixed": "#bcd2fe",
+                    "on-secondary-fixed-variant": "#3b5176",
+                    "on-primary-fixed": "#000000",
+                    "on-error": "#ffefef",
+                    "on-tertiary-container": "#640d5d",
+                    "inverse-surface": "#060e20",
+                    "surface-tint": "#0049e6",
+                    "surface-bright": "#f6f6ff",
+                    "inverse-on-surface": "#959cb5",
+                    "primary": "#0049e6",
+                    "surface-container": "#e2e7ff",
+                    "primary-container": "#829bff",
+                    "on-secondary-container": "#32486c",
+                    "on-tertiary": "#ffeef7",
+                    "on-tertiary-fixed-variant": "#6e1966",
+                    "on-surface-variant": "#535b71",
+                    "secondary-fixed-dim": "#aec4ef",
+                    "secondary-dim": "#3a5074",
+                    "error-dim": "#a70138"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .scanner-viewfinder {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2rem;
+        }
+        .corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #14b8a6; /* Teal glow */
+            box-shadow: 0 0 15px rgba(20, 184, 166, 0.6);
+        }
+        .top-left { top: -2px; left: -2px; border-right: 0; border-bottom: 0; border-top-left-radius: 2rem; }
+        .top-right { top: -2px; right: -2px; border-left: 0; border-bottom: 0; border-top-right-radius: 2rem; }
+        .bottom-left { bottom: -2px; left: -2px; border-right: 0; border-top: 0; border-bottom-left-radius: 2rem; }
+        .bottom-right { bottom: -2px; right: -2px; border-left: 0; border-top: 0; border-bottom-right-radius: 2rem; }
+        
+        .scan-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #14b8a6, transparent);
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            box-shadow: 0 0 10px #14b8a6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface overflow-hidden h-screen w-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="grid_view">grid_view</span>
+</button>
+<h1 class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white font-['Inter'] font-semibold tracking-tight">QueueMa</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-white shadow-sm">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a friendly professional man in a bright modern office setting, soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3KGunBByfwDsmWhWgqrQYY20wm2Dl62q3DmZ_vqawuD0rl3HpeGGNwcuvBL2NYPcBvvM_01XfsMjMV8ix54tEV_ZfP2MJq6DlY_siRycsPPs5eFX34X251RdYEWO80TAv54pqQF5pOkyNRVEZno6-coniSU65J_PInoZL53bzGV1jX50ANI7qEuVN3fhrF1_ggiovacAKRnSvxCquTqFooif5_OKcu4nRu3SCyBpKnaQeKkUJAS54UvFCLWAOyrNCLupZrs67Uc"/>
+</div>
+</header>
+<!-- Main Content: Scanner Canvas -->
+<main class="relative flex-1 flex flex-col items-center justify-center w-full">
+<!-- Background: Blurred Admin Office -->
+<div class="absolute inset-0 z-0">
+<img alt="Administrative Office" class="w-full h-full object-cover opacity-60 scale-110 blur-sm" data-alt="A bright, airy, and clean modern government office interior with sleek white desks, glass partitions, and soft natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVHhtvISzolS4Ezuvkh1zUcAx6Ysxexp93i5S99nMxrOOwBVCEgMZTwcWaqCJc5WiFNxGBNrJB1YYtUlsbO-v_4g13kbWmh0lWuk_7fH5wGOBlaZUz2EWfOZW_CVpng7aPs72vcqTVSPzyJ74itQ3obNOJNuGOGKsO8HjdbTOdOFX3T8DKHd826RUBY98sBC9Hg03rr-hrv9M-J_otFGaYsjSym7o0C_dsWXSRQpYgOJAircwA0c1fBWf52VOWk1xXVUW8idzmsaM"/>
+<div class="absolute inset-0 bg-white/20"></div>
+</div>
+<!-- Scanner Interface Overlay -->
+<div class="relative z-10 flex flex-col items-center justify-center px-8 w-full max-w-md">
+<!-- Viewfinder Area -->
+<div class="scanner-viewfinder flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+<div class="scan-line"></div>
+<span class="material-symbols-outlined text-white/40 text-6xl" data-icon="qr_code_2">qr_code_2</span>
+</div>
+<!-- Instruction Card -->
+<div class="mt-12 glass-card rounded-[2rem] p-8 w-full shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/40">
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-12 h-1 bg-on-surface/10 rounded-full mb-2"></div>
+<h2 class="text-on-surface text-xl font-semibold tracking-tight leading-snug">
+                        Scan the service desk code to take your ticket.
+                    </h2>
+<p class="text-on-surface-variant text-sm font-medium leading-relaxed">
+                        Align the QR code within the frame to automatically check-in to your appointment.
+                    </p>
+<button class="mt-6 w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-semibold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="flashlight_on">flashlight_on</span>
+<span>Turn on light</span>
+</button>
+</div>
+</div>
+<!-- Accessibility Note -->
+<button class="mt-6 flex items-center gap-2 text-on-surface-variant font-medium text-sm px-6 py-2 rounded-full hover:bg-white/50 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="keyboard">keyboard</span>
+                Enter code manually
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-3xl z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)] fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 transition-all scale-110 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-['Inter'] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 transition-all scale-110 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="rebase_edit">rebase_edit</span>
+<span class="text-[10px] font-medium font-['Inter'] uppercase tracking-widest mt-1">Services</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-blue-600 text-white rounded-2xl px-5 py-2 shadow-lg shadow-blue-500/30 scale-110 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="text-[10px] font-medium font-['Inter'] uppercase tracking-widest mt-1">Scanner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 transition-all scale-110 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium font-['Inter'] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

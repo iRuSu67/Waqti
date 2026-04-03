@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicQueue - District Hub 04</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#000000",
+            "tertiary-dim": "#822c78",
+            "on-primary-fixed-variant": "#002278",
+            "on-tertiary-fixed-variant": "#6e1966",
+            "surface-bright": "#f6f6ff",
+            "primary-fixed": "#829bff",
+            "on-primary-container": "#001a63",
+            "secondary-fixed-dim": "#aec4ef",
+            "on-tertiary": "#ffeef7",
+            "on-secondary-fixed-variant": "#3b5176",
+            "surface-container-low": "#eef0ff",
+            "on-surface": "#272e42",
+            "on-error": "#ffefef",
+            "on-background": "#272e42",
+            "background": "#f6f6ff",
+            "surface-container": "#e2e7ff",
+            "primary-fixed-dim": "#6e8cff",
+            "on-primary": "#f2f1ff",
+            "on-error-container": "#510017",
+            "error-dim": "#a70138",
+            "tertiary-container": "#fc96e9",
+            "surface-container-highest": "#d1dcff",
+            "surface-variant": "#d1dcff",
+            "on-tertiary-fixed": "#41003d",
+            "outline": "#6f768e",
+            "primary": "#0049e6",
+            "surface-container-lowest": "#ffffff",
+            "error": "#b41340",
+            "inverse-surface": "#060e20",
+            "surface-dim": "#c7d4fa",
+            "on-secondary-container": "#32486c",
+            "error-container": "#f74b6d",
+            "on-tertiary-container": "#640d5d",
+            "tertiary-fixed-dim": "#ec89da",
+            "surface-tint": "#0049e6",
+            "surface-container-high": "#d9e2ff",
+            "tertiary": "#903985",
+            "primary-dim": "#0040cb",
+            "on-surface-variant": "#535b71",
+            "primary-container": "#829bff",
+            "surface": "#f6f6ff",
+            "secondary-dim": "#3a5074",
+            "outline-variant": "#a5adc6",
+            "on-secondary": "#eff2ff",
+            "on-secondary-fixed": "#1e3457",
+            "secondary-fixed": "#bcd2fe",
+            "secondary-container": "#bcd2fe",
+            "inverse-primary": "#6a89ff",
+            "secondary": "#465c81",
+            "inverse-on-surface": "#959cb5",
+            "tertiary-fixed": "#fc96e9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .action-gradient {
+      background: linear-gradient(45deg, #0049e6, #829bff);
+    }
+    .chart-path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 0;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-low text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-slate-50 dark:bg-slate-950 flex flex-col z-40 border-r-0">
+<div class="p-8 flex flex-col h-full">
+<div class="mb-10">
+<h1 class="text-2xl font-bold tracking-tight text-blue-700 dark:text-blue-500">CivicQueue</h1>
+<p class="text-xs font-medium text-on-surface-variant mt-1">District Hub 04</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-blue-700 font-semibold border-r-4 border-blue-600 transition-all duration-200 ease-in-out hover:pl-6 bg-blue-50/50" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-sm font-medium tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 ease-in-out hover:pl-6" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-inter text-sm font-medium tracking-tight">Live Queues</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 ease-in-out hover:pl-6" href="#">
+<span class="material-symbols-outlined">desk</span>
+<span class="font-inter text-sm font-medium tracking-tight">Counters</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 ease-in-out hover:pl-6" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-sm font-medium tracking-tight">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 ease-in-out hover:pl-6" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-sm font-medium tracking-tight">Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-2 pt-6 border-t border-slate-200/50">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-inter text-sm font-medium tracking-tight">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-inter text-sm font-medium tracking-tight">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-72 h-16 z-30 bg-white/80 backdrop-blur-xl flex justify-between items-center px-8 border-b border-slate-200/20 shadow-sm">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary/10 text-sm" placeholder="Search queues or citizens..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-transform active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-transform active:scale-95">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-transform active:scale-95">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-on-surface">Admin Smith</span>
+<img alt="Administrator Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="Close-up portrait of a professional government administrator in a suit, soft office background lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLb1RC5nNkPKX32mexTKpUgjZNWv3l905Mjz1CKDbLwBt7AzufI1Y2lJ9nOvk6fsZAIv87dJSvRpXhEkYXurcivrLLtZ_r1oEuMDtfrUgldmL5WqUxskFWYiUs1bQ_bBCvNC48WRUToPUUSPKVXUlSwzHBHakyocNrA4S7hnkA9Ptu8vUDltgPrzaKI-ephVoi3If3OyzfgKdl4y6vbmgA-JDZXRiwpwMddHqjTcNEVvFeW51e6oLTI3ah04jiyeh6KRnzTAR8UQ8"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-72 mt-16 p-8 min-h-[calc(100vh-64px)] grid grid-cols-12 gap-8">
+<!-- Left Column: Active Queue -->
+<section class="col-span-7 flex flex-col gap-6">
+<div class="relative group">
+<button class="w-full action-gradient py-8 rounded-xl shadow-xl shadow-primary/20 flex flex-col items-center justify-center text-white transition-transform active:scale-98">
+<span class="text-4xl font-bold tracking-tighter mb-1">Call Next Number</span>
+<span class="text-primary-fixed font-medium flex items-center gap-2">
+            Currently Serving: <span class="bg-white/20 px-3 py-1 rounded-full text-white">A-204</span>
+</span>
+</button>
+<div class="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-tertiary rounded-full"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col flex-1">
+<div class="p-6 flex justify-between items-center bg-white">
+<h2 class="text-xl font-semibold text-on-surface">Active Queue List</h2>
+<span class="px-4 py-1.5 bg-primary-container/20 text-primary text-xs font-bold rounded-full">42 WAITING</span>
+</div>
+<div class="flex-1 overflow-y-auto">
+<!-- Table Header -->
+<div class="grid grid-cols-4 px-6 py-3 bg-surface-container-low text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">
+<div>Ticket</div>
+<div>Service Type</div>
+<div>Wait Time</div>
+<div class="text-right">Action</div>
+</div>
+<!-- Queue Items -->
+<div class="divide-y divide-slate-100">
+<!-- Row 1 -->
+<div class="grid grid-cols-4 px-6 py-4 items-center bg-white hover:bg-blue-50/30 transition-colors">
+<div class="font-bold text-primary">A-205</div>
+<div class="text-sm font-medium">Identity Services</div>
+<div class="text-sm text-on-surface-variant">12 min</div>
+<div class="text-right">
+<button class="text-xs font-bold text-primary hover:underline">RECALL</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-4 px-6 py-4 items-center bg-slate-50/50 hover:bg-blue-50/30 transition-colors">
+<div class="font-bold text-primary">B-112</div>
+<div class="text-sm font-medium">Business Permit</div>
+<div class="text-sm text-on-surface-variant">08 min</div>
+<div class="text-right">
+<button class="text-xs font-bold text-primary hover:underline">RECALL</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-4 px-6 py-4 items-center bg-white hover:bg-blue-50/30 transition-colors">
+<div class="font-bold text-primary">A-206</div>
+<div class="text-sm font-medium">Identity Services</div>
+<div class="text-sm text-on-surface-variant">05 min</div>
+<div class="text-right">
+<button class="text-xs font-bold text-primary hover:underline">RECALL</button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-4 px-6 py-4 items-center bg-slate-50/50 hover:bg-blue-50/30 transition-colors">
+<div class="font-bold text-primary">C-409</div>
+<div class="text-sm font-medium">Tax Consultation</div>
+<div class="text-sm text-on-surface-variant">02 min</div>
+<div class="text-right">
+<button class="text-xs font-bold text-primary hover:underline">RECALL</button>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="grid grid-cols-4 px-6 py-4 items-center bg-white hover:bg-blue-50/30 transition-colors">
+<div class="font-bold text-primary">A-207</div>
+<div class="text-sm font-medium">Identity Services</div>
+<div class="text-sm text-on-surface-variant">Just Now</div>
+<div class="text-right">
+<button class="text-xs font-bold text-primary hover:underline">RECALL</button>
+</div>
+</div>
+<!-- Row 6 -->
+<div class="grid grid-cols-4 px-6 py-4 items-center bg-slate-50/50 hover:bg-blue-50/30 transition-colors">
+<div class="font-bold text-primary">B-113</div>
+<div class="text-sm font-medium">Business Permit</div>
+<div class="text-sm text-on-surface-variant">Just Now</div>
+<div class="text-right">
+<button class="text-xs font-bold text-primary hover:underline">RECALL</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Data & Analytics -->
+<section class="col-span-5 flex flex-col gap-6">
+<!-- Average Wait Time Card (Green Highlight) -->
+<div class="bg-emerald-600 rounded-xl p-8 text-white shadow-lg shadow-emerald-200 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="text-sm font-bold uppercase tracking-widest text-emerald-100">Performance Index</span>
+<span class="material-symbols-outlined text-emerald-200">timer</span>
+</div>
+<h3 class="text-4xl font-bold mb-1">3.7 min</h3>
+<p class="text-emerald-100 text-sm font-medium">Average Wait: Under Threshold</p>
+<div class="mt-6 flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-white w-[88%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold">88% Target</span>
+</div>
+</div>
+<!-- Decorative subtle pattern -->
+<div class="absolute -bottom-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Traffic Line Chart Widget -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col h-full">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="text-lg font-semibold text-on-surface">Daily Visitor Traffic</h4>
+<p class="text-xs text-on-surface-variant">Last 12 Working Hours</p>
+</div>
+<div class="flex items-center gap-1 px-3 py-1 bg-surface-container-low rounded-full">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<span class="text-[10px] font-bold text-primary">LIVE</span>
+</div>
+</div>
+<!-- SVG Chart -->
+<div class="flex-1 relative min-h-[240px]">
+<svg class="w-full h-full" viewbox="0 0 400 200">
+<!-- Grid Lines -->
+<line opacity="0.3" stroke="#a5adc6" stroke-dasharray="4" stroke-width="0.5" x1="0" x2="400" y1="180" y2="180"></line>
+<line opacity="0.3" stroke="#a5adc6" stroke-dasharray="4" stroke-width="0.5" x1="0" x2="400" y1="120" y2="120"></line>
+<line opacity="0.3" stroke="#a5adc6" stroke-dasharray="4" stroke-width="0.5" x1="0" x2="400" y1="60" y2="60"></line>
+<!-- Main Chart Line -->
+<path class="chart-path" d="M0,180 C40,170 80,40 120,60 S160,160 200,120 S240,20 280,40 S320,100 400,80" fill="none" stroke="url(#lineGradient)" stroke-linecap="round" stroke-width="4"></path>
+<!-- Area Fill -->
+<path d="M0,180 C40,170 80,40 120,60 S160,160 200,120 S240,20 280,40 S320,100 400,80 V180 H0 Z" fill="url(#areaGradient)" opacity="0.1"></path>
+<!-- Definitions -->
+<defs>
+<lineargradient id="lineGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#0049e6"></stop>
+<stop offset="100%" stop-color="#903985"></stop>
+</lineargradient>
+<lineargradient id="areaGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0049e6"></stop>
+<stop offset="100%" stop-color="transparent"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Tooltip / Callout -->
+<div class="absolute top-[40px] left-[260px] bg-on-surface text-white text-[10px] px-2 py-1 rounded shadow-lg">
+            Peak: 142 visitors
+          </div>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-4">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<span class="text-[10px] font-bold text-on-surface-variant block mb-1">TOTAL</span>
+<span class="text-xl font-bold text-on-surface">1,204</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl">
+<span class="text-[10px] font-bold text-on-surface-variant block mb-1">SERVED</span>
+<span class="text-xl font-bold text-on-surface">1,162</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-tertiary">
+<span class="text-[10px] font-bold text-on-surface-variant block mb-1">URGENT</span>
+<span class="text-xl font-bold text-tertiary">14</span>
+</div>
+</div>
+</div>
+<!-- Station Distribution (Bento Mini) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">desktop_windows</span>
+<h5 class="text-xs font-bold text-on-surface-variant">Active Counters</h5>
+</div>
+<p class="text-2xl font-bold">18 / 24</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">stars</span>
+<h5 class="text-xs font-bold text-on-surface-variant">Satisfaction</h5>
+</div>
+<p class="text-2xl font-bold">4.8 / 5.0</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Hidden on Dashboards per policy, but structure present if needed for specific task flow) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 action-gradient text-white rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 hidden">
+<span class="material-symbols-outlined">add</span>
+</button>
+</body></html>

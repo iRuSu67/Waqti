@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Secretariat - Agent Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#737c7f",
+                    "secondary-fixed-dim": "#c2d4ff",
+                    "surface-container-high": "#e3e9ec",
+                    "primary-dim": "#2d5387",
+                    "on-secondary-fixed": "#2d3f62",
+                    "on-error": "#fff7f6",
+                    "inverse-on-surface": "#9b9d9e",
+                    "error-container": "#fe8983",
+                    "surface-dim": "#d1dce0",
+                    "on-primary": "#f6f7ff",
+                    "surface-variant": "#dbe4e7",
+                    "outline-variant": "#abb3b7",
+                    "on-tertiary-fixed": "#393953",
+                    "on-background": "#2b3437",
+                    "on-error-container": "#752121",
+                    "secondary-container": "#d8e2ff",
+                    "surface-container": "#eaeff1",
+                    "tertiary-fixed": "#dbdafb",
+                    "inverse-primary": "#9fc2fe",
+                    "tertiary-container": "#dbdafb",
+                    "on-tertiary-container": "#4c4c67",
+                    "surface-container-low": "#f1f4f6",
+                    "secondary-dim": "#415378",
+                    "surface-bright": "#f8f9fa",
+                    "error": "#9f403d",
+                    "inverse-surface": "#0c0f10",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-primary-container": "#2c5287",
+                    "tertiary-dim": "#51516c",
+                    "primary": "#3a5f94",
+                    "on-surface-variant": "#586064",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#d5e3ff",
+                    "on-secondary": "#f9f8ff",
+                    "on-secondary-container": "#405276",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-fixed-variant": "#555571",
+                    "secondary-fixed": "#d8e2ff",
+                    "tertiary-fixed-dim": "#cdccec",
+                    "tertiary": "#5d5d78",
+                    "on-tertiary": "#fbf7ff",
+                    "on-primary-fixed": "#153f73",
+                    "primary-fixed-dim": "#bfd5ff",
+                    "surface-tint": "#3a5f94",
+                    "on-surface": "#2b3437",
+                    "on-secondary-fixed-variant": "#495b81",
+                    "on-primary-fixed-variant": "#375c91",
+                    "background": "#f8f9fa",
+                    "secondary": "#4d5f84",
+                    "primary-fixed": "#d5e3ff",
+                    "error-dim": "#4e0309"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Public Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Public Sans', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm h-16 flex justify-between items-center px-8 w-full font-['Public_Sans'] tracking-tight">
+<div class="flex items-center gap-8">
+<div class="text-xl font-bold text-blue-950 dark:text-white">Digital Secretariat</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="#">Queue Management</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="#">Analytics</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="#">Archives</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Agent Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a government agent with neutral background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr3SgiAPF6_q-UkcAOE8HOTZvxXIwx0zmFB7oiit5SWr9AdTSd_mG-kZvgpW9_w2BXiblQF1YAHSp5C4byE7acP7IgUoY0iugBjE2j9XxwtxQIstiiHRWs9HN68vtpkHn8Kia4kwAtjeMkAyM-GPfZtcem4iMj2UPzrWauI5UR702u0yS7RxaKq6wuS4qYFvFt0XVrB27hbeCSWPPrRXMoVdfZmI_TWUHh1eiQc0kYgywLwhkHBe1gLlvTwkn9RmimowQBlAeDMys"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-16 bg-slate-50 dark:bg-slate-950 flex flex-col gap-2 p-4 font-['Inter'] text-sm">
+<div class="py-6 px-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary text-on-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<div class="font-black text-blue-900">Agent Portal</div>
+<div class="text-xs text-on-surface-variant">Official Access</div>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-blue-800 dark:text-blue-300 font-semibold shadow-sm rounded-lg hover:pl-2 transition-all duration-200">
+<span class="material-symbols-outlined">hourglass_empty</span>
+<span>Live Queue</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg hover:pl-2 transition-all duration-200">
+<span class="material-symbols-outlined">assignment_ind</span>
+<span>Assigned to Me</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg hover:pl-2 transition-all duration-200">
+<span class="material-symbols-outlined">priority_high</span>
+<span>Priority Cases</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg hover:pl-2 transition-all duration-200">
+<span class="material-symbols-outlined">assessment</span>
+<span>Daily Reports</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg hover:pl-2 transition-all duration-200">
+<span class="material-symbols-outlined">group</span>
+<span>Team View</span>
+</button>
+<div class="mt-auto px-4 py-6">
+<button class="w-full py-2.5 bg-primary text-white rounded-md font-medium text-xs hover:bg-primary-dim transition-colors">
+                New Entry
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen bg-surface flex flex-col">
+<div class="p-8 flex gap-8 h-[calc(100vh-64px-48px)]">
+<!-- Left Side: Queue List -->
+<section class="w-2/5 flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-extrabold text-on-surface tracking-tight">Active Queue</h2>
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-semibold">14 Pending</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="grid grid-cols-1 divide-y divide-transparent">
+<!-- Alternating rows achieved by logic but styling needs to respect system -->
+<div class="p-5 flex items-center justify-between bg-white hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-primary">#59</span>
+<div>
+<p class="font-semibold text-on-surface">ID Card Renewal</p>
+<p class="text-xs text-on-surface-variant">Client: Marcus Thorne • 12 min wait</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-5 flex items-center justify-between bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-primary">#60</span>
+<div>
+<p class="font-semibold text-on-surface">Passport Application</p>
+<p class="text-xs text-on-surface-variant">Client: Elena Rodriguez • 8 min wait</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-5 flex items-center justify-between bg-white hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-primary">#61</span>
+<div>
+<p class="font-semibold text-on-surface">Residency Permit</p>
+<p class="text-xs text-on-surface-variant">Client: Sarah Jenkins • 5 min wait</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-5 flex items-center justify-between bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-primary">#62</span>
+<div>
+<p class="font-semibold text-on-surface">ID Card Renewal</p>
+<p class="text-xs text-on-surface-variant">Client: David Chen • 2 min wait</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-5 flex items-center justify-between bg-white hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-primary">#63</span>
+<div>
+<p class="font-semibold text-on-surface">Birth Certificate</p>
+<p class="text-xs text-on-surface-variant">Client: Amina S. • Just joined</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+<div class="p-5 flex items-center justify-between bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-primary">#64</span>
+<div>
+<p class="font-semibold text-on-surface">Notary Service</p>
+<p class="text-xs text-on-surface-variant">Client: Julian Gray • Just joined</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Visualizations & Stats -->
+<section class="w-3/5 flex flex-col gap-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-2xl font-extrabold text-on-surface tracking-tight">Performance Overview</h2>
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Live Metrics
+                    </div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-xs font-medium text-on-surface-variant mb-2">Average Wait</p>
+<p class="text-3xl font-bold text-primary">3.7 <span class="text-sm font-normal text-on-surface-variant">min</span></p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-xs font-medium text-on-surface-variant mb-2">Tickets Resolved</p>
+<p class="text-3xl font-bold text-primary">124</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-xs font-medium text-on-surface-variant mb-2">Active Counters</p>
+<p class="text-3xl font-bold text-primary">5</p>
+</div>
+</div>
+<!-- Visualization: Line Chart Concept -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/10 flex flex-col">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="text-lg font-bold text-on-surface">Wait Times Over 8h</h3>
+<p class="text-sm text-on-surface-variant">Trend analysis for institutional efficiency</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+<div class="flex-1 relative flex items-end gap-1">
+<!-- Simulated Line Chart with SVG -->
+<svg class="absolute inset-0 w-full h-full preserve-3d" preserveaspectratio="none" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#3a5f94" stop-opacity="0.1"></stop>
+<stop offset="100%" stop-color="#3a5f94" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,280 Q100,260 200,220 T400,180 T600,240 T800,120 T1000,140 L1000,300 L0,300 Z" fill="url(#chartGradient)"></path>
+<path d="M0,280 Q100,260 200,220 T400,180 T600,240 T800,120 T1000,140" fill="none" stroke="#3a5f94" stroke-linecap="round" stroke-width="3"></path>
+<!-- Key points -->
+<circle cx="200" cy="220" fill="#3a5f94" r="5"></circle>
+<circle cx="600" cy="240" fill="#3a5f94" r="5"></circle>
+<circle cx="800" cy="120" fill="#3a5f94" r="5"></circle>
+</svg>
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between opacity-10">
+<div class="w-full h-px bg-on-surface"></div>
+<div class="w-full h-px bg-on-surface"></div>
+<div class="w-full h-px bg-on-surface"></div>
+<div class="w-full h-px bg-on-surface"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-xs text-on-surface-variant">08:00</span>
+<span class="text-xs text-on-surface-variant">10:00</span>
+<span class="text-xs text-on-surface-variant">12:00</span>
+<span class="text-xs text-on-surface-variant">14:00</span>
+<span class="text-xs text-on-surface-variant">16:00</span>
+<span class="text-xs text-on-surface-variant">18:00</span>
+</div>
+</div>
+<!-- Secondary Visual Bento -->
+<div class="h-1/4 flex gap-4">
+<div class="flex-1 bg-primary text-on-primary rounded-xl p-6 flex flex-col justify-between shadow-lg">
+<div>
+<p class="text-xs opacity-80 uppercase tracking-widest font-bold">System Load</p>
+<h4 class="text-2xl font-bold">Optimal</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="text-xs">Processing latency &lt; 45ms</span>
+</div>
+</div>
+<div class="flex-1 bg-tertiary-container text-on-tertiary-container rounded-xl p-6 flex flex-col justify-between">
+<div>
+<p class="text-xs opacity-80 uppercase tracking-widest font-bold">Feedback</p>
+<h4 class="text-2xl font-bold">4.9/5.0</h4>
+</div>
+<div class="flex items-center gap-1 text-xs">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Highest satisfaction month</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-4 mt-auto bg-slate-100 dark:bg-slate-950 border-t border-slate-200/20 dark:border-slate-800/20 flex justify-between items-center px-8 ml-64 font-['Inter'] text-xs text-slate-600 dark:text-slate-400">
+<div>© 2024 Digital Secretariat Public Service. Internal Use Only.</div>
+<div class="flex gap-6">
+<a class="no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Security Policy</a>
+<a class="no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">System Status</a>
+<a class="no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#">Help Desk</a>
+</div>
+</footer>
+</main>
+</body></html>

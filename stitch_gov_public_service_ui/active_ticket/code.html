@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#6e8cff",
+                    "inverse-surface": "#060e20",
+                    "on-tertiary-container": "#640d5d",
+                    "on-primary": "#f2f1ff",
+                    "on-error": "#ffefef",
+                    "secondary-fixed": "#bcd2fe",
+                    "secondary-dim": "#3a5074",
+                    "error": "#b41340",
+                    "background": "#f6f6ff",
+                    "on-surface-variant": "#535b71",
+                    "surface-bright": "#f6f6ff",
+                    "error-dim": "#a70138",
+                    "tertiary-fixed": "#fc96e9",
+                    "primary-container": "#829bff",
+                    "tertiary-container": "#fc96e9",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#bcd2fe",
+                    "surface-tint": "#0049e6",
+                    "inverse-on-surface": "#959cb5",
+                    "primary": "#0049e6",
+                    "on-secondary": "#eff2ff",
+                    "surface-dim": "#c7d4fa",
+                    "on-tertiary": "#ffeef7",
+                    "surface-container": "#e2e7ff",
+                    "surface": "#f6f6ff",
+                    "primary-dim": "#0040cb",
+                    "on-surface": "#272e42",
+                    "on-error-container": "#510017",
+                    "inverse-primary": "#6a89ff",
+                    "secondary-fixed-dim": "#aec4ef",
+                    "on-primary-container": "#001a63",
+                    "on-primary-fixed": "#000000",
+                    "outline-variant": "#a5adc6",
+                    "on-secondary-fixed": "#1e3457",
+                    "surface-container-low": "#eef0ff",
+                    "surface-variant": "#d1dcff",
+                    "surface-container-highest": "#d1dcff",
+                    "on-background": "#272e42",
+                    "on-secondary-fixed-variant": "#3b5176",
+                    "secondary": "#465c81",
+                    "on-tertiary-fixed": "#41003d",
+                    "surface-container-high": "#d9e2ff",
+                    "error-container": "#f74b6d",
+                    "tertiary-fixed-dim": "#ec89da",
+                    "on-secondary-container": "#32486c",
+                    "tertiary": "#903985",
+                    "primary-fixed": "#829bff",
+                    "on-tertiary-fixed-variant": "#6e1966",
+                    "on-primary-fixed-variant": "#002278",
+                    "outline": "#6f768e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl fixed top-0 w-full z-50">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<button class="text-blue-600 dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-inter text-slate-900 dark:text-slate-50 font-semibold tracking-tight text-lg">Civic Services</h1>
+<button class="text-blue-600 dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section (Top Third) -->
+<section class="bg-inverse-surface pt-12 pb-20 px-6 rounded-b-[3rem] relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" data-alt="abstract soft navy and royal blue glowing radial gradients for background texture" style="background-image: radial-gradient(circle at 20% 20%, #829bff 0%, transparent 40%)"></div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="text-primary-fixed uppercase tracking-widest text-xs font-bold mb-6">Current Ticket</span>
+<div class="bg-surface-container-lowest/10 backdrop-blur-md p-1 rounded-[2.5rem] border border-white/10">
+<div class="bg-white flex items-center justify-center w-48 h-48 rounded-[2rem] shadow-2xl">
+<span class="text-inverse-surface text-8xl font-extrabold tracking-tighter">59</span>
+</div>
+</div>
+<h2 class="text-white mt-8 text-2xl font-semibold">Mon ticket</h2>
+</div>
+</section>
+<!-- Dynamic Content Canvas -->
+<div class="px-6 -mt-12 relative z-20 space-y-6">
+<!-- Progress & Time Status Card -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 shadow-[0_40px_40px_-20px_rgba(39,46,66,0.06)]">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="text-on-surface-variant text-sm font-medium mb-1">Queue Status</p>
+<h3 class="text-on-surface text-2xl font-bold">4<span class="text-on-surface-variant font-normal text-lg">th of 12</span></h3>
+</div>
+<div class="bg-green-500/10 text-green-600 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-xs font-bold uppercase tracking-wider">Active</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-4 bg-surface-container-high rounded-full overflow-hidden mb-8">
+<div class="h-full bg-primary rounded-full w-[33%] relative">
+<div class="absolute right-0 top-0 bottom-0 w-2 bg-white/30"></div>
+</div>
+</div>
+<!-- AI Wait Time Card -->
+<div class="bg-[#10b981] p-6 rounded-2xl flex items-center justify-between text-white shadow-lg shadow-emerald-200/50">
+<div class="flex items-center gap-4">
+<div class="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+</div>
+<div>
+<p class="text-emerald-50 text-xs font-medium uppercase tracking-wider">AI Est. Wait</p>
+<p class="text-2xl font-bold">18 mins</p>
+</div>
+</div>
+<span class="material-symbols-outlined opacity-50">auto_awesome</span>
+</div>
+</div>
+<!-- Service Details Bento Section -->
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-[2rem] border border-transparent flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-medium uppercase tracking-wider">Service</p>
+<p class="text-on-surface font-semibold">Passport Renewal</p>
+</div>
+</div>
+<div class="h-px bg-outline-variant/15 w-full"></div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-medium uppercase tracking-wider">Location</p>
+<p class="text-on-surface font-semibold">Central Bureau</p>
+</div>
+</div>
+</div>
+<!-- Map Insight / Civic Progress Widget -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden relative group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div class="p-6 pl-8 flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest">Live Update</span>
+<p class="text-on-surface font-medium">Wait time is decreasing faster than usual.</p>
+</div>
+<span class="material-symbols-outlined text-tertiary">trending_down</span>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="pt-4 flex flex-col items-center">
+<button class="flex items-center gap-2 text-error font-semibold py-4 px-8 rounded-full hover:bg-error/5 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">cancel</span>
+                    Cancel Ticket
+                </button>
+<p class="text-on-surface-variant text-[11px] text-center px-12 mt-2 leading-relaxed">
+                    By cancelling, you will lose your position in the current queue.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center w-full px-4 pt-3 pb-8">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-2xl px-5 py-2 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Tickets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined">map</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-dim": "#822c78",
+                    "surface-variant": "#d1dcff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d1dcff",
+                    "on-secondary-container": "#32486c",
+                    "inverse-primary": "#6a89ff",
+                    "tertiary-fixed": "#fc96e9",
+                    "on-error-container": "#510017",
+                    "inverse-on-surface": "#959cb5",
+                    "on-surface-variant": "#535b71",
+                    "surface-bright": "#f6f6ff",
+                    "on-secondary": "#eff2ff",
+                    "primary-fixed": "#829bff",
+                    "primary": "#0049e6",
+                    "surface-container-high": "#d9e2ff",
+                    "secondary-container": "#bcd2fe",
+                    "on-secondary-fixed-variant": "#3b5176",
+                    "secondary-dim": "#3a5074",
+                    "on-primary-fixed": "#000000",
+                    "surface-tint": "#0049e6",
+                    "outline-variant": "#a5adc6",
+                    "error-container": "#f74b6d",
+                    "on-secondary-fixed": "#1e3457",
+                    "outline": "#6f768e",
+                    "surface-container": "#e2e7ff",
+                    "on-primary-container": "#001a63",
+                    "primary-fixed-dim": "#6e8cff",
+                    "on-error": "#ffefef",
+                    "error": "#b41340",
+                    "on-surface": "#272e42",
+                    "surface": "#f6f6ff",
+                    "on-tertiary": "#ffeef7",
+                    "surface-container-low": "#eef0ff",
+                    "primary-dim": "#0040cb",
+                    "inverse-surface": "#060e20",
+                    "on-tertiary-fixed-variant": "#6e1966",
+                    "on-primary": "#f2f1ff",
+                    "tertiary": "#903985",
+                    "on-tertiary-fixed": "#41003d",
+                    "on-primary-fixed-variant": "#002278",
+                    "background": "#f6f6ff",
+                    "secondary-fixed-dim": "#aec4ef",
+                    "on-tertiary-container": "#640d5d",
+                    "surface-dim": "#c7d4fa",
+                    "error-dim": "#a70138",
+                    "tertiary-fixed-dim": "#ec89da",
+                    "on-background": "#272e42",
+                    "secondary": "#465c81",
+                    "primary-container": "#829bff",
+                    "tertiary-container": "#fc96e9",
+                    "secondary-fixed": "#bcd2fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl bg-opacity-80 shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a friendly professional person with a warm smile and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAYWYA57P69m-iUWPfu0FissP8dhWBsJYfXzgk4zkGkgrrbwdNG5W5UkBnZ3Rqt8HsLGR7wS6jR1UziqLzbKO9UxXLRubtNHVHprgETugErw7yqYFNXRy_66iO1iygBAj3ZkXcjgYRwfaMyKPjRQ9kDVNcrI4loAlYihq8GRBywAu6cj7V7Ijyn4T-zAJswqjy_O4iXywQd_xXad-l7bShoxVi6KDBpRkcqYm7uxZMLqhcjXjnC5XdzCwfY6Wn2fHyyuhhNZABLss"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-blue-700 dark:text-blue-400">CivicQueue</h1>
+</div>
+<button class="transition-all duration-300 active:scale-95 text-slate-500 dark:text-slate-400 p-2 rounded-full hover:bg-blue-50/50">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="px-6 py-8 max-w-lg mx-auto space-y-6">
+<!-- Urgent Friendly Alert Card -->
+<section class="relative overflow-hidden bg-gradient-to-br from-[#FF9500] to-[#FFCC00] rounded-[2rem] p-6 shadow-2xl shadow-amber-200/50 flex items-start gap-4 transition-transform active:scale-[0.98]">
+<div class="bg-white/20 backdrop-blur-md rounded-2xl p-3 flex-shrink-0">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="notifications_active" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<div class="flex-1">
+<p class="text-white text-lg font-bold leading-tight tracking-tight">
+                    Your turn is in 15 minutes! Please head to the main desk
+                </p>
+<div class="mt-4 flex gap-2">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                        Urgent Action
+                    </span>
+</div>
+</div>
+<!-- Aesthetic abstract pattern -->
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+</section>
+<!-- Queue Status Box (Slate Gray Contrast) -->
+<section class="bg-on-surface rounded-[2.5rem] p-8 text-center shadow-xl relative overflow-hidden">
+<!-- Background Texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<span class="text-surface-variant font-medium tracking-[0.2em] text-xs uppercase block mb-4">Current Queue Status</span>
+<div class="flex flex-col items-center justify-center py-6">
+<div class="relative">
+<!-- Glow effect for ticket -->
+<div class="absolute inset-0 bg-primary blur-3xl opacity-20 rounded-full"></div>
+<span class="display-lg text-white font-extrabold tracking-tighter relative" style="font-size: 7rem; line-height: 1;">
+                        59
+                    </span>
+</div>
+<p class="text-surface-variant/60 font-medium mt-4">Your Ticket Number</p>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div class="bg-white/5 rounded-2xl p-4">
+<p class="text-surface-variant/40 text-[10px] uppercase font-bold tracking-widest mb-1">Queue Size</p>
+<p class="text-white font-semibold">12 People</p>
+</div>
+<div class="bg-white/5 rounded-2xl p-4">
+<p class="text-surface-variant/40 text-[10px] uppercase font-bold tracking-widest mb-1">Est. Wait</p>
+<p class="text-white font-semibold">~ 14m</p>
+</div>
+</div>
+</section>
+<!-- Civic Progress Widget (Signature Component) -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border-l-4 border-tertiary flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-tertiary-container/30 p-2 rounded-full">
+<span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">Main Desk Location</h3>
+<p class="text-on-surface-variant text-sm">East Wing, Floor 2, Counter 4</p>
+</div>
+</div>
+<button class="text-primary p-2 rounded-full hover:bg-primary/5">
+<span class="material-symbols-outlined" data-icon="near_me">near_me</span>
+</button>
+</section>
+<!-- Asymmetric Action Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 flex flex-col justify-between h-40 shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="history">history</span>
+<div>
+<p class="font-semibold text-on-surface">Queue Log</p>
+<p class="text-on-surface-variant text-xs">View past visits</p>
+</div>
+</div>
+<div class="bg-primary rounded-[1.5rem] p-6 flex flex-col justify-between h-40 shadow-lg shadow-primary/20 text-white">
+<span class="material-symbols-outlined text-3xl" data-icon="qr_code">qr_code</span>
+<div>
+<p class="font-semibold">Check-in</p>
+<p class="text-white/70 text-xs">Scan at counter</p>
+</div>
+</div>
+</div>
+<!-- Secondary Guidance -->
+<div class="bg-surface-container-high/40 rounded-xl p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="support_agent">support_agent</span>
+<p class="text-on-surface-variant text-xs leading-relaxed">
+                Need assistance finding the counter? Tap the navigation icon or speak to a queue marshal at the entrance.
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3 backdrop-blur-2xl bg-white/90 dark:bg-slate-950/90 rounded-t-[2rem] shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-6 py-2 active:scale-90 transition-transform duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[11px] font-medium tracking-wide Inter">Home</span>
+</a>
+<!-- My Queue (Active) -->
+<a class="flex flex-col items-center justify-center bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-200 rounded-2xl px-6 py-2 active:scale-90 transition-transform duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="format_list_numbered" style="font-variation-settings: 'FILL' 1;">format_list_numbered</span>
+<span class="text-[11px] font-medium tracking-wide Inter">My Queue</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-6 py-2 active:scale-90 transition-transform duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[11px] font-medium tracking-wide Inter">History</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-6 py-2 active:scale-90 transition-transform duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium tracking-wide Inter">Profile</span>
+</a>
+</nav>
+</body></html>
